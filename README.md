@@ -1,79 +1,150 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# EcomApp Project
 
-# Getting Started
+Welcome to the EcomApp project! This README provides an overview of the project setup, available scripts, and how to run and develop the application.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Prerequisites
 
-## Step 1: Start the Metro Server
+Make sure you have the following installed:
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Node.js
+- Yarn or npm
+- React Native CLI
+- Xcode (for iOS development)
+- Android Studio (for Android development)
+- CocoaPods (for iOS dependencies)
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Installation
 
-```bash
-# using npm
-npm start
+1. **Clone the repository**:
 
-# OR using Yarn
-yarn start
-```
+   ```bash
+   git clone https://github.com/azizmobarak/ecomapp.git
+   ```
 
-## Step 2: Start your Application
+2. **Navigate to the project directory**:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+   ```bash
+   cd ecomapp
+   ```
 
-### For Android
+3. **Install dependencies**:
 
-```bash
-# using npm
-npm run android
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
 
-# OR using Yarn
-yarn android
-```
+## Project Scripts
 
-### For iOS
+### General Commands
 
-```bash
-# using npm
-npm run ios
+1. **Start the Metro bundler**:
 
-# OR using Yarn
-yarn ios
-```
+   ```bash
+   yarn start
+   ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+2. **Lint the codebase**:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   ```bash
+   yarn lint
+   ```
 
-## Step 3: Modifying your App
+3. **Run tests**:
 
-Now that you have successfully run the app, let's modify it.
+   ```bash
+   yarn test
+   ```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+### iOS Development
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+1. **Run iOS application**:
 
-## Congratulations! :tada:
+   ```bash
+   yarn ios
+   ```
 
-You've successfully run and modified your React Native App. :partying_face:
+   This script performs the following steps:
+   - Changes directory to `ios` (`cd ios`).
+   - Installs Ruby gems using Bundler (`bundle install`).
+   - Installs CocoaPods dependencies (`pod install`).
+   - Starts the iOS simulator and runs the app (`react-native run-ios`).
 
-### Now what?
+2. **Clean and Rebuild iOS project**:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+   ```bash
+   yarn clean-ios
+   ```
 
-# Troubleshooting
+### Android Development
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+1. **Run Android application**:
 
-# Learn More
+   ```bash
+   yarn android
+   ```
 
-To learn more about React Native, take a look at the following resources:
+2. **Clean Android project**:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+   ```bash
+   yarn android-clean
+   ```
+
+   This script performs the following steps:
+   - Changes directory to `android` (`cd android`).
+   - Cleans the project using Gradle (`./gradlew clean`).
+
+## Additional Commands
+
+1. **Install CocoaPods**:
+
+   ```bash
+   yarn pods-install
+   ```
+
+2. **Clean iOS Cache**:
+
+   ```bash
+   yarn ios-clean
+   ```
+
+   This script cleans the CocoaPods cache.
+
+## Troubleshooting
+
+If you encounter issues with missing vector icons, follow these steps:
+
+1. Verify the installation of `react-native-vector-icons`.
+2. Ensure proper linking of the fonts to your project.
+3. Run `npx react-native link` if needed.
+4. For iOS build issues, try running `yarn clean-ios` and then `yarn ios` again.
+
+## Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+
+   ```bash
+   git checkout -b feature-branch
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -am 'Add new feature'
+   ```
+
+4. Push the branch:
+
+   ```bash
+   git push origin feature-branch
+   ```
+
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
