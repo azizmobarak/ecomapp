@@ -111,6 +111,10 @@ Make sure you have the following installed:
 
    This script cleans the CocoaPods cache.
 
+## Styling
+
+This project uses [TailwindCSS](https://tailwindcss.com/) for styling. TailwindCSS is a utility-first CSS framework that provides low-level utility classes to build custom designs. For more information, check the [TailwindCSS documentation](https://tailwindcss.com/docs).
+
 ## Troubleshooting
 
 If you encounter issues with missing vector icons, follow these steps:
